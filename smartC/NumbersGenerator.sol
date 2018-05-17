@@ -1,6 +1,6 @@
 pragma solidity ^0.4.23;
 
-import "./NumberLib.sol";
+import "./UtilLib.sol";
 
 contract RandomArrayGenerator{
     
@@ -12,7 +12,7 @@ contract RandomArrayGenerator{
         uint random_number = uint(blockhash(block.number-1))%10;
             
         for(uint i = 0; i<size; i++){
-            array[i] = Generator.generateSingleNumber(nonce, winner);
+            array[i] = Utils.generateSingleNumber(nonce, winner);
             nonce += random_number;
             
             if(nonce > uint(block.timestamp/256)){
